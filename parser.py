@@ -42,4 +42,9 @@ def user_args():
 
     args = parser.parse_args()
 
+    if args.players <= 1:
+        raise ValueError("Number of players must be greater than 1.")
+    elif args.rounds < 1:
+        raise ValueError("Number of rounds must be greater than 1")
+
     return args

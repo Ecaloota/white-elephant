@@ -74,8 +74,6 @@ def generate_statistics(n_players, n_rounds, verbose, value_biased):
     flat_value_by_stolen = list(zip(flat_gifts, flat_stolen))
 
     count = Counter(flat_gifts)
-    # print(count)
-    # print("count: ", count[1])
     gift_value_by_stolen_sum = []
     for i in range(1, 101):
         sum = 0
@@ -89,8 +87,12 @@ def generate_statistics(n_players, n_rounds, verbose, value_biased):
     av_final_gift_value_per_player = np.average(player_gifts_array, axis=0)
     av_times_stolen_per_gift = np.average(number_times_stolen_array, axis=0)
 
+    print(gift_value_by_stolen_sum)
+    print(flat_gifts)
     normalised_gift_value_by_stolen = [
-        (x[0], (x[1] / count[x[0]]) * 100) for x in gift_value_by_stolen_sum
+        (x[0], (x[1] / count[x[0]]) * 100)
+        for x in gift_value_by_stolen_sum
+        if count[x[0]] != 0
     ]
 
     return (

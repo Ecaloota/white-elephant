@@ -1,4 +1,3 @@
-from numpy import printoptions
 from simulator import generate_statistics
 from parser import user_args
 from writer import write_outputs
@@ -14,9 +13,7 @@ if args.write in ["True", "true", "yes", "y"] or args.write is True:
     write_outputs(args.players, args.rounds, steals, gifts, values)
 
 if args.plot in ["True", "true", "yes", "y"] or args.plot is True:
-    write_plots(
-        steals, gifts, norm_values
-    )  ## TODO not normalised by number of times its generated!
+    write_plots(steals, gifts, norm_values)
 
 
 print("-" * 30)
