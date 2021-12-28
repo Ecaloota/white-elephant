@@ -1,3 +1,4 @@
 *.cpython
 *__pycache__
-data/*
+data/*.png
+data/*.txt

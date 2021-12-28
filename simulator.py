@@ -87,8 +87,6 @@ def generate_statistics(n_players, n_rounds, verbose, value_biased):
     av_final_gift_value_per_player = np.average(player_gifts_array, axis=0)
     av_times_stolen_per_gift = np.average(number_times_stolen_array, axis=0)
 
-    print(gift_value_by_stolen_sum)
-    print(flat_gifts)
     normalised_gift_value_by_stolen = [
         (x[0], (x[1] / count[x[0]]) * 100)
         for x in gift_value_by_stolen_sum
